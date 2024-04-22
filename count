@@ -1,0 +1,25 @@
+import re
+
+def count_occurrences(text, keywords):
+    occurrences = {}
+    for keyword in keywords:
+        occurrences[keyword] = len(re.findall(keyword, text))
+    return occurrences
+
+# Example text
+text = """
+Error: Something went wrong. Please try again later.
+HTTP Status Code: 404 Not Found
+Error: Unable to connect to the server.
+HTTP Status Code: 500 Internal Server Error
+"""
+
+# Keywords or patterns to count occurrences
+keywords = [
+    r'Error:',
+    r'HTTP Status Code: \d+'
+]
+
+# Count occurrences
+result = count_occurrences(text, keywords)
+print(result)

@@ -1,0 +1,18 @@
+import time
+
+# Function to perform monitoring
+def monitor():
+    while not stop_monitoring:  # Loop until stop_monitoring is True
+        # Perform monitoring tasks
+        print("Monitoring...")
+        time.sleep(1)  # Simulate some monitoring task
+
+# Variable to control the monitoring loop
+stop_monitoring = False
+
+# Start monitoring in a separate thread or process
+monitor_thread = threading.Thread(target=monitor)
+monitor_thread.start()
+
+# Some time later, when you want to stop monitoring
+stop_monitoring = True

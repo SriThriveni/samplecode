@@ -1,0 +1,2 @@
+tail -f /path/to/logfile
+tail -n 100 -f /path/to/logfile
